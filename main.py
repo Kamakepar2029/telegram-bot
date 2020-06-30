@@ -3,6 +3,9 @@ import telebot
 import config
 import subprocess
 import os
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 bot = telebot.TeleBot(config.TOKEN)
 
