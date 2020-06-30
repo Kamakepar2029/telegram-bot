@@ -2,6 +2,7 @@ import telebot
 import config
 import subprocess
 import os
+import urllib2
 
 bot = telebot.TeleBot(config.TOKEN)
 
@@ -18,12 +19,8 @@ def kolya(message):
 
 @bot.message_handler(content_types=['text'])
 def lalala(message):
-  if (message.text == 'Hello'):
-    bot.send_message(message.chat.id, 'Hello Man!')
-  elif (message.text == 'How are you?'):
-    bot.send_message(message.chat.id, 'Everything good! And how are you?')
-  else:
-    bot.send_message(message.chat.id, message.text)
-
+  u = 'http://name.kamakepar.ru/bot.php?a='+message
+  page = urllib.request.urlopen(u)
+  bot.send_message(message.chat.id, page.read())
 
 bot.polling(none_stop=True)
