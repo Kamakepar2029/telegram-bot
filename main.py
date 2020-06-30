@@ -19,8 +19,8 @@ def kolya(message):
 
 @bot.message_handler(content_types=['text'])
 def lalala(message):
-  u = 'http://name.kamakepar.ru/bot.php?a='+message
+  u = 'http://name.kamakepar.ru/bot.php?a='+str(message)
   page = urllib.request.urlopen(u)
-  bot.send_message(message.chat.id, page.read())
+  bot.send_message(message.chat.id, str(page.read()))
 
 bot.polling(none_stop=True)
