@@ -3,6 +3,7 @@ import config
 import subprocess
 import os
 import urllib2
+import urllib.request
 
 bot = telebot.TeleBot(config.TOKEN)
 
