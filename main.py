@@ -20,7 +20,7 @@ def kolya(message):
 def lalala(message):
   if (message.text == 'Hello'):
     bot.send_message(message.chat.id, 'Hello Man!')
-  if (message.text == 'How are you?'):
+  elif (message.text == 'How are you?'):
     bot.send_message(message.chat.id, 'Everything good! And how are you?')
   else:
     bot.send_message(message.chat.id, message.text)
